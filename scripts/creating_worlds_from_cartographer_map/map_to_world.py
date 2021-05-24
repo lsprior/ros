@@ -230,7 +230,7 @@ class WorldGenerator(object):
                 center_x = self.origin[0] + int((start_c + end_c) / 2) * self.resolution
                 center_y = self.origin[1] + int((start_r + end_r) / 2) * self.resolution
                 l = (end_r - start_r) * self.resolution
-                self.generate_v_wall(link, center_x, center_y, l, wall_count)
+                self.generate_v_wall(link, center_x, -center_y, l, wall_count)
             elif self.map[end_r][end_c + 1] == 255:
                 h_wall = True
                 while self.map[end_r][end_c] == 255:
@@ -239,7 +239,7 @@ class WorldGenerator(object):
                 center_x = self.origin[0] + int((start_c + end_c) / 2) * self.resolution
                 center_y = self.origin[1] + int((start_r + end_r) / 2) * self.resolution
                 l = (end_c - start_c) * self.resolution
-                self.generate_h_wall(link, center_x, center_y, l, wall_count)
+                self.generate_h_wall(link, center_x, -center_y, l, wall_count)
             else:
                 flag[end_r][end_c] = 0
                 continue

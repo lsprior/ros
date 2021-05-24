@@ -1,6 +1,7 @@
 <launch>
     <arg name="gui" default="true" />
-    <arg name="world_file" default="$(find turtlebot_artisteril_gazebo)/worlds/warehouse.world" />
+    <!-- <arg name="world_file" default="$(find turtlebot_artisteril_gazebo)/worlds/warehouse.world" /> -->
+    <arg name="world_file" default="$(find turtlebot_artisteril_gazebo)/worlds/generated_map.bag.world" />
 
     <arg name="base" value="kobuki" /> <!-- create, roomba -->
     <arg name="stacks" value="hexagons" /> <!-- circles, hexagons -->
@@ -38,7 +39,8 @@
     </node>
 
 
-    <arg name="map_file" default="$(find turtlebot_artisteril_gazebo)/maps/artisteril_almacen.yaml" />
+    <!-- <arg name="map_file" default="$(find turtlebot_artisteril_gazebo)/maps/artisteril_almacen.yaml" /> -->
+        <arg name="map_file" default="$(find turtlebot_artisteril_gazebo)/maps/map.bag.yaml" />
     <node pkg="map_server" type="map_server" name="map_server" args="$(arg map_file)" respawn="false" >
        <param name="frame_id" value="/map" />
     </node>
