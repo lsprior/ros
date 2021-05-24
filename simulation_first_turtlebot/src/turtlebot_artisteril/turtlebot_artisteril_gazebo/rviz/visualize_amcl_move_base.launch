@@ -1,0 +1,3 @@
+<launch>
+    <node type="rviz" name="rviz" pkg="rviz" args="-d $(find turtlebot_artisteril_gazebo)/rviz/visualize_amcl_move_base.rviz" />
+  </launch>

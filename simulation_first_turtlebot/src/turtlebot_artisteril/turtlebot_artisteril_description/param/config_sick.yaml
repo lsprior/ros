@@ -1,0 +1,15 @@
+sensor_ip: 192.168.1.21
+host_ip: 192.168.1.100
+host_udp_port: 0
+frame_id: scan
+skip: 0
+angle_start: -1.5707963
+angle_end: 1.5707963
+time_offset: 0.0
+channel_enabled: true
+general_system_state: true
+derived_settings: true
+measurement_data: true
+intrusion_data: true
+application_io_data: true
+use_persistent_config: false

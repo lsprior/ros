@@ -1,0 +1,80 @@
+<launch>
+
+   <arg name="base" default="kobuki" />  <!-- create, roomba, kobuki -->
+   <arg name="stacks" default="hexagons" />  <!-- circles, hexagons -->
+   <arg name="3d_sensor" default="d435i" />  <!-- kinect, asus_xtion_pro, d435i -->
+ 
+   <!--<arg name="central_master_name" default="172.31.0.102"/> -->
+   <!-- <param name="/use_sim_time" value="true" /> -->
+
+   <!-- ROBOT_MODEL -->
+   <arg name="namespace" default="robot_0"/>
+   <arg name="initial_pose_x" default="0"/>
+   <arg name="initial_pose_y" default="0"/>
+   <arg name="initial_pose_a" default="0"/>
+
+   <!-- Kobuki Base -->
+   <include file="$(find turtlebot_artisteril_description)/launch/includes/turtlebot_minimal.launch">
+      <arg name="base" value="$(arg base)" />
+      <arg name="stacks" value="$(arg stacks)" />
+      <arg name="3d_sensor" value="$(arg 3d_sensor)" />
+      <arg name="namespace" value="$(arg namespace)"/>
+   </include>
+
+   <!-- Microscan3 LiDar sensor -->
+  <arg name="sensor_ip"             default="192.168.1.21" />
+  <arg name="host_ip"               default="192.168.1.100" />
+  <arg name="host_udp_port"         default="6061" />
+  <arg name="frame_id"              default="base_scan_link" />
+  <arg name="skip"                  default="0" />
+  <arg name="angle_start"           default="0" />
+  <arg name="angle_end"             default="0" />
+  <arg name="time_offset"           default="0.0" />
+  <arg name="channel_enabled"       default="True" />
+  <arg name="general_system_state"  default="True" />
+  <arg name="derived_settings"      default="True" />
+  <arg name="measurement_data"      default="True" />
+  <arg name="intrusion_data"        default="True" />
+  <arg name="application_io_data"   default="True" />
+  <arg name="use_persistent_config"   default="False" />
+
+	<!-- load parameter -->
+	<rosparam command="load" file="$(find turtlebot_artisteril_description)/param/config_sick.yaml"/>
+
+	<!-- start laser driver -->
+  <node pkg="sick_safetyscanners" type="sick_safetyscanners_node" name="turtlebot_sick" output="screen">
+     <param name="sensor_ip"              type="string" value="$(arg sensor_ip)" />
+     <param name="host_ip"                type="string" value="$(arg host_ip)" />
+     <param name="host_udp_port"          type="int"    value="$(arg host_udp_port)" />
+     <param name="frame_id"               type="string" value="$(arg frame_id)" />
+     <param name="skip"                   type="int"    value="$(arg skip)" />
+     <param name="angle_start"            type="double" value="$(arg angle_start)" />
+     <param name="angle_end"              type="double" value="$(arg angle_end)" />
+     <param name="time_offset"            type="double" value="$(arg time_offset)" />
+     <param name="channel_enabled"        type="bool"   value="$(arg channel_enabled)" />
+     <param name="general_system_state"   type="bool"   value="$(arg general_system_state)" />
+     <param name="derived_settings"       type="bool"   value="$(arg derived_settings)" />
+     <param name="measurement_data"       type="bool"   value="$(arg measurement_data)" />
+     <param name="intrusion_data"         type="bool"   value="$(arg intrusion_data)" />
+     <param name="application_io_data"    type="bool"   value="$(arg application_io_data)" />
+     <param name="use_persistent_config"  type="bool"   value="$(arg use_persistent_config)" />
+  </node>
+
+  <!-- Gmapping -->
+  <arg name="custom_gmapping_launch_file" default="$(find turtlebot_artisteril_description)/launch/includes/gmapping/$(arg 3d_sensor)_gmapping.launch.xml"/>
+  <include file="$(arg custom_gmapping_launch_file)">
+	<arg name="tf_prefix" value="$(arg namespace)"/>
+	<arg name="map_frame" value="/map"/>
+  </include>
+
+   <!-- Move base --> 
+   <arg name="custom_move_base_launch_file" default="$(find turtlebot_artisteril_description)/launch/includes/move_base.launch.xml"/>
+   <arg name="custom_move_base_param_file" default="$(find turtlebot_artisteril_description)/param/move_base_config/$(arg 3d_sensor)_costmap_params.yaml"/>
+   <include file="$(arg custom_move_base_launch_file)">
+      <arg name="global_frame_id" value="map"/>
+      <arg name="tf_prefix" value="$(arg namespace)"/>
+      <arg name="custom_param_file" value="$(arg custom_move_base_param_file)"/>
+   </include>
+
+ 
+</launch>

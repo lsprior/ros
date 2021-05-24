@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--
+    - Base      : kobuki
+    - Stacks    : hexagons
+    - 3d Sensor : kinect
+-->    
+<robot name="turtlebot" xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:include filename="$(find turtlebot_artisteril_description)/urdf/turtlebot_library.urdf.xacro" />
+  
+  <xacro:kobuki/>
+  <xacro:stack_hexagons         parent="base_link"/>
+  <xacro:sensor_microscan3	parent="plate_middle_link" offset_x="-0.185" offset_y="0" offset_z="0.057" offset_yaw="${pi}"/>
+  <xacro:d435i 			parent="plate_top_link" offset_x="-0.17" offset_y="0" offset_z="-0.02" offset_yaw="${pi}"/>
+        
+</robot>
+
+

@@ -1,0 +1,60 @@
+--------------------------------------------------------------------------
+# Instalación de Librerias:
+
+Python version 3.6.9
+pyrealsense2 version 2.39.0.2342
+
+if necessary:
+sudo apt install python3-pip
+
+
+pip3 install pyrealsense2
+pip3 install pyransac3d
+pip3 install open3d
+pip3 install easydict
+pip3 install opencv-python
+pip3 install argparse
+pip3 install numpy
+pip3 install setuptools
+
+python3 -m pip install --upgrade pip
+pip3 install cython
+----------------------------------------------------------------------------------
+pyrealsense2  version 2.39.0.2342
+setuptools  51.0.0
+pyransac3d 0.5.0
+open3d 0.11.2
+opencv-python 4.4.0.46
+numpy 1.19.4
+easydict 1.9
+argparse 1.4.0
+--------------------------------------------------------------------------
+# Ejecución del Programa en consola:
+
+python3 Detect_obstaclev1.py
+
+Los valores de distancias de profundidad para delimitar las zonas de detección principales se expresa en "metros", por defecto estan a 1,0m y a 2,0m
+
+*Nota:
+-Espera "solo" al inicio de la ejecución de aprox 1min y medio, mientras carga la imagen de profundidad en otra ventana(llamada "Depth), en la ventana "Color" se observa los resultados de la detección y algunos parametros.
+-Los valores de distancias para limites principales se expresa en "metros", por defecto estan a 1,0m y a 2,0m (Las Zonas de trabajo estaran con la plantilla de poligonos)
+
+Para modificar:
+
+python3 Detect_obstaclev1.py -LimiteSeguridad 1.5 -LimiteCentral 2.5
+
+
+
+######## NOTA ##############
+Hardware Probado:
+I5 Intel® Core™ i5 CPU 650 @ 3.20GHz × 4
+8 Gb ram
+
+Software:
+Ubuntu 18.04.5 LTS
+Kernel: 5.4.0-56-generic
+
+
+
+
+

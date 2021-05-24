@@ -1,0 +1,69 @@
+<launch>
+
+    <arg name="base" default="kobuki" />  <!-- create, roomba, kobuki -->
+    <arg name="stacks" default="hexagons" />  <!-- circles, hexagons -->
+    <arg name="3d_sensor" default="d435i" />  <!-- kinect, asus_xtion_pro, d435i -->
+
+    <!--<arg name="central_master_name" default="172.31.0.102"/> -->
+    <!-- <param name="/use_sim_time" value="true" /> -->
+
+    <!-- ROBOT_MODEL -->
+    <arg name="namespace" default="robot_0"/>
+    <arg name="initial_pose_x" default="0"/>
+    <arg name="initial_pose_y" default="0"/>
+    <arg name="initial_pose_a" default="0"/>
+
+    <!-- Kobuki Base -->
+    <include file="$(find turtlebot_artisteril_description)/launch/includes/turtlebot_minimal.launch">
+       <arg name="base" value="$(arg base)" />
+       <arg name="stacks" value="$(arg stacks)" />
+       <arg name="3d_sensor" value="$(arg 3d_sensor)" />
+       <arg name="namespace" value="$(arg namespace)"/>
+    </include>
+
+  <!-- Pepperl sensor -->
+
+<arg name="frame_id" default="base_scan_link"/>
+  <arg name="scanner_ip" default="192.168.1.21"/>
+  <arg name="scan_frequency" default="35"/>
+  <arg name="samples_per_scan" default="3600"/>
+
+  <!-- R2000 Driver -->
+  <node pkg="pepperl_fuchs_r2000" type="r2000_node" name="r2000_node" respawn="true" output="screen">
+    <param name="frame_id" value="$(arg frame_id)"/>
+    <param name="scanner_ip" value="$(arg scanner_ip)"/>
+    <param name="scan_frequency" value="$(arg scan_frequency)"/>
+    <param name="samples_per_scan" value="$(arg samples_per_scan)"/>
+  </node>	
+
+<node pkg="laser_filters" type="scan_to_scan_filter_chain"
+        name="laser_filter">
+      <rosparam command="load" file="$(find turtlebot_artisteril_description)/configs/laser_angle_filter.yaml" />
+      <remap from="scan" to="/r2000_node/scan" />
+	<remap from="scan_filtered" to="/scan" />
+    </node>
+
+    <!-- AMCL -->
+    <arg name="custom_amcl_launch_file" default="$(find turtlebot_artisteril_description)/launch/includes/amcl/$(arg 3d_sensor)_amcl.launch.xml"/>
+    <include file="$(arg custom_amcl_launch_file)">
+       <arg name="tf_prefix" value="$(arg namespace)"/>
+       <arg name="scan_topic" value="scan" />
+       <arg name="use_map_topic" value="true" />
+       <arg name="initial_pose_x" value="$(arg initial_pose_x)" />
+       <arg name="initial_pose_y" value="$(arg initial_pose_y)" />
+       <arg name="initial_pose_a" value="$(arg initial_pose_a)" />
+       <arg name="global_frame_id" value="map"/>
+    </include>
+
+    <!-- Move base -->
+    <arg name="custom_move_base_launch_file" default="$(find turtlebot_artisteril_description)/launch/includes/move_base.launch.xml"/>
+    <arg name="custom_move_base_param_file" default="$(find turtlebot_artisteril_description)/param/move_base_config/$(arg 3d_sensor)_costmap_params.yaml"/>
+    <include file="$(arg custom_move_base_launch_file)">
+       <arg name="global_frame_id" value="map"/>
+       <arg name="tf_prefix" value="$(arg namespace)"/>
+       <arg name="custom_param_file" value="$(arg custom_move_base_param_file)"/>
+    </include>
+
+
+ </launch>
+
