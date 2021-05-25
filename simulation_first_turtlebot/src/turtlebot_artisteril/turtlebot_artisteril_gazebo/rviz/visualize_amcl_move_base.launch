@@ -1,3 +1,5 @@
 <launch>
+
+    <node type="pub_layout.py" name="draw_layout" pkg="turtlebot_artisteril_gazebo"/>
     <node type="rviz" name="rviz" pkg="rviz" args="-d $(find turtlebot_artisteril_gazebo)/rviz/visualize_amcl_move_base.rviz" />
   </launch>
