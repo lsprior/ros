@@ -1,0 +1,458 @@
+{
+  "Settings": [
+    {
+      "Id": 0,
+      "Name": "batcave_test1",
+      "Description": "",
+      "Version": 24,
+      "LastUpdateDate": "13/05/2021 11:53:09 AM",
+      "CreationDate": "7/05/2021 12:11:37 PM",
+      "MapResolution": 2,
+      "ReflectorsRadius": 40,
+      "CenterPoint": {
+        "IsEmpty": false,
+        "X": 0.0,
+        "Y": 0.0,
+        "Point": {
+          "IsEmpty": true,
+          "X": 0.0,
+          "Y": 0.0
+        }
+      },
+      "Background": {
+        "UseBackgroundImage": true,
+        "BackgroundImagePath": "./map.bag_edited1.png",
+        "BackgroundLayerColor": "Black",
+        "BackgroundOpacity": 1.0,
+        "BackgroundOffsetX": 0.0,
+        "BackgroundOffsetY": 0.0
+      },
+      "Web": {
+        "StationsPermanentTooltips": false,
+        "SegmentsPermanentTooltips": false
+      },
+      "FTP": {
+        "FTPAddress": "192.168.1.100",
+        "FTPUsername": "artisteril",
+        "FTPPassword": "artisteril",
+        "AGVLayoutFolder": "/home/artisteril/AGV/Configs/TR10000/"
+      }
+    }
+  ],
+  "Stations": [
+    {
+      "Id": 1,
+      "SegmentId": 1,
+      "Angle": 359.599976,
+      "Property": "",
+      "Vector": {
+        "X": 14675.0,
+        "Y": 29325.0
+      },
+      "Name": "",
+      "Charge": false,
+      "Pick": false,
+      "Drop": false
+    },
+    {
+      "Id": 2,
+      "SegmentId": 1,
+      "Angle": 359.701019,
+      "Property": "",
+      "Vector": {
+        "X": 17626.0,
+        "Y": 34558.0
+      },
+      "Name": "",
+      "Charge": false,
+      "Pick": false,
+      "Drop": false
+    },
+    {
+      "Id": 4,
+      "SegmentId": 6,
+      "Angle": 179.1257,
+      "Property": "",
+      "Vector": {
+        "X": 16489.0,
+        "Y": 25126.0
+      },
+      "Name": "",
+      "Charge": false,
+      "Pick": false,
+      "Drop": false
+    },
+    {
+      "Id": 3,
+      "SegmentId": 9,
+      "Angle": 269.785126,
+      "Property": "",
+      "Vector": {
+        "X": 20821.0,
+        "Y": 26866.0
+      },
+      "Name": "",
+      "Charge": false,
+      "Pick": false,
+      "Drop": false
+    }
+  ],
+  "Segments": [
+    {
+      "Id": 3,
+      "StartAction": 0,
+      "EndAction": 0,
+      "StartVector": {
+        "X": 15925.0,
+        "Y": 34566.0
+      },
+      "EndVector": {
+        "X": 17977.0,
+        "Y": 34552.0
+      },
+      "Vectors": [],
+      "Speed": 30,
+      "Parts": 100,
+      "QuadMode": false,
+      "BodyAngle": 0.0,
+      "SegmentAngle": 0.0
+    },
+    {
+      "Id": 9,
+      "StartAction": 0,
+      "EndAction": 0,
+      "StartVector": {
+        "X": 20830.0,
+        "Y": 29162.0
+      },
+      "EndVector": {
+        "X": 20819.0,
+        "Y": 26229.0
+      },
+      "Vectors": [],
+      "Speed": 30,
+      "Parts": 100,
+      "QuadMode": false,
+      "BodyAngle": 0.0,
+      "SegmentAngle": 0.0
+    },
+    {
+      "Id": 1,
+      "StartAction": 0,
+      "EndAction": 0,
+      "StartVector": {
+        "X": 14697.0,
+        "Y": 26595.0
+      },
+      "EndVector": {
+        "X": 14642.0,
+        "Y": 33321.0
+      },
+      "Vectors": [],
+      "Speed": 30,
+      "Parts": 100,
+      "QuadMode": false,
+      "BodyAngle": 0.0,
+      "SegmentAngle": 0.0
+    },
+    {
+      "Id": 11,
+      "StartAction": 0,
+      "EndAction": 0,
+      "StartVector": {
+        "X": 19608.0,
+        "Y": 25114.0
+      },
+      "EndVector": {
+        "X": 15797.0,
+        "Y": 25129.0
+      },
+      "Vectors": [],
+      "Speed": 30,
+      "Parts": 100,
+      "QuadMode": false,
+      "BodyAngle": 0.0,
+      "SegmentAngle": 0.0
+    },
+    {
+      "Id": 5,
+      "StartAction": 0,
+      "EndAction": 0,
+      "StartVector": {
+        "X": 18997.0,
+        "Y": 33496.0
+      },
+      "EndVector": {
+        "X": 19007.0,
+        "Y": 31105.0
+      },
+      "Vectors": [],
+      "Speed": 30,
+      "Parts": 100,
+      "QuadMode": false,
+      "BodyAngle": 0.0,
+      "SegmentAngle": 0.0
+    },
+    {
+      "Id": 7,
+      "StartAction": 0,
+      "EndAction": 0,
+      "StartVector": {
+        "X": 19667.0,
+        "Y": 30361.0
+      },
+      "EndVector": {
+        "X": 20003.0,
+        "Y": 30368.0
+      },
+      "Vectors": [],
+      "Speed": 30,
+      "Parts": 100,
+      "QuadMode": false,
+      "BodyAngle": 0.0,
+      "SegmentAngle": 0.0
+    },
+    {
+      "Id": 8,
+      "StartAction": 0,
+      "EndAction": 0,
+      "StartVector": {
+        "X": 20003.0,
+        "Y": 30368.0
+      },
+      "EndVector": {
+        "X": 20830.0,
+        "Y": 29162.0
+      },
+      "Vectors": [
+        {
+          "X": 20911.0,
+          "Y": 30353.0
+        }
+      ],
+      "Speed": 10,
+      "Parts": 100,
+      "QuadMode": false,
+      "BodyAngle": 0.0,
+      "SegmentAngle": 0.0
+    },
+    {
+      "Id": 10,
+      "StartAction": 0,
+      "EndAction": 0,
+      "StartVector": {
+        "X": 20819.0,
+        "Y": 26229.0
+      },
+      "EndVector": {
+        "X": 19608.0,
+        "Y": 25114.0
+      },
+      "Vectors": [
+        {
+          "X": 20866.0,
+          "Y": 25195.0
+        }
+      ],
+      "Speed": 10,
+      "Parts": 100,
+      "QuadMode": false,
+      "BodyAngle": 0.0,
+      "SegmentAngle": 0.0
+    },
+    {
+      "Id": 12,
+      "StartAction": 0,
+      "EndAction": 0,
+      "StartVector": {
+        "X": 15797.0,
+        "Y": 25129.0
+      },
+      "EndVector": {
+        "X": 14697.0,
+        "Y": 26595.0
+      },
+      "Vectors": [
+        {
+          "X": 14658.0,
+          "Y": 25178.0
+        }
+      ],
+      "Speed": 10,
+      "Parts": 100,
+      "QuadMode": false,
+      "BodyAngle": 0.0,
+      "SegmentAngle": 0.0
+    },
+    {
+      "Id": 2,
+      "StartAction": 0,
+      "EndAction": 0,
+      "StartVector": {
+        "X": 14642.0,
+        "Y": 33321.0
+      },
+      "EndVector": {
+        "X": 15925.0,
+        "Y": 34566.0
+      },
+      "Vectors": [
+        {
+          "X": 14581.0,
+          "Y": 34589.0
+        }
+      ],
+      "Speed": 10,
+      "Parts": 100,
+      "QuadMode": false,
+      "BodyAngle": 0.0,
+      "SegmentAngle": 0.0
+    },
+    {
+      "Id": 4,
+      "StartAction": 0,
+      "EndAction": 0,
+      "StartVector": {
+        "X": 17977.0,
+        "Y": 34552.0
+      },
+      "EndVector": {
+        "X": 18997.0,
+        "Y": 33496.0
+      },
+      "Vectors": [
+        {
+          "X": 19071.0,
+          "Y": 34517.0
+        }
+      ],
+      "Speed": 10,
+      "Parts": 100,
+      "QuadMode": false,
+      "BodyAngle": 0.0,
+      "SegmentAngle": 0.0
+    },
+    {
+      "Id": 6,
+      "StartAction": 0,
+      "EndAction": 0,
+      "StartVector": {
+        "X": 19007.0,
+        "Y": 31105.0
+      },
+      "EndVector": {
+        "X": 19667.0,
+        "Y": 30361.0
+      },
+      "Vectors": [
+        {
+          "X": 18973.0,
+          "Y": 30347.0
+        }
+      ],
+      "Speed": 10,
+      "Parts": 100,
+      "QuadMode": false,
+      "BodyAngle": 0.0,
+      "SegmentAngle": 0.0
+    }
+  ],
+  "Links": [
+    {
+      "Id": 1,
+      "Name": "",
+      "Description": "1 to 2",
+      "Source": 1,
+      "Target": 2,
+      "ForwardSpeed": 30,
+      "ReverseSpeed": 30,
+      "Segments": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "Id": 2,
+      "Name": "",
+      "Description": "2 to 3",
+      "Source": 2,
+      "Target": 3,
+      "ForwardSpeed": 30,
+      "ReverseSpeed": 30,
+      "Segments": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "Id": 3,
+      "Name": "",
+      "Description": "3 to 4",
+      "Source": 3,
+      "Target": 4,
+      "ForwardSpeed": 30,
+      "ReverseSpeed": 30,
+      "Segments": [
+        9,
+        10,
+        11
+      ]
+    },
+    {
+      "Id": 4,
+      "Name": "",
+      "Description": "4 to 1",
+      "Source": 4,
+      "Target": 1,
+      "ForwardSpeed": 30,
+      "ReverseSpeed": 30,
+      "Segments": [
+        11,
+        12,
+        1
+      ]
+    }
+  ],
+  "Reflectors": [],
+  "Actions": [
+    {
+      "Id": 1,
+      "StationId": 0,
+      "Active": false,
+      "Name": "DefaultAction",
+      "Description": "",
+      "Sentences": [
+        {
+          "Id": 1,
+          "ActionId": 1,
+          "MethodName": "DefaultMethodName",
+          "Parameters": [
+            {
+              "Id": 1,
+              "SentenceId": 1,
+              "Value": "DefaultValue",
+              "Type": "DefaultType"
+            }
+          ]
+        }
+      ],
+      "Triggers": [
+        {
+          "Where": "OnStation",
+          "ItemIds": [
+            {
+              "Id": 0
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "Notes": []
+}

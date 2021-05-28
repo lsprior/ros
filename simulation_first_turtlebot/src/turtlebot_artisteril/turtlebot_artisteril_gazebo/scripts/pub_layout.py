@@ -194,7 +194,7 @@ if __name__ == '__main__':
 
 ##############################################################################################
 
-############## Draw real time position seen by cartographer ###########################
+############## Draw odom ###########################
     marker_spheres2 = Marker(
         type=Marker.SPHERE_LIST,
         id=5,
